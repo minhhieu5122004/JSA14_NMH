@@ -1,0 +1,16 @@
+#colortest{
+    background-color: aquamarine;
+    height: 100px;
+    width: 100px;
+    margin: 50px 0px 50px;
+}
+#clock{
+    background-color: aquamarine;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 55px;
+    width: fit-content;
+    padding: 10px;
+    height: 60px;
+    margin-top: 50px;
+}

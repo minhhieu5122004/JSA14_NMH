@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./homework.css">
+</head>
+
+<body onload="showClock()">
+    <button onclick="findEven()">In ra các số chẵn</button><br>
+
+    <div id="colortest" onmousemove="changeColor()" onmouseout="resetColor()">
+
+    </div>
+
+    <button onclick="numberOneTriangle()">Tam giác</button>
+
+    <div id="clock">
+
+    </div>
+
+
+    <script>
+        let dayso = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+        console.log(dayso)
+        function findEven() {
+            for (let i = 0; i < dayso.length; i++) {
+                if (dayso[i] % 2 == 0) {
+                    console.log(dayso[i])
+                }
+            }
+        }
+
+        let color = document.getElementById('colortest')
+        function changeColor() {
+            color.style.background = "blue"
+        }
+        function resetColor() {
+            color.style.background = "aquamarine"
+        }
+
+        function numberOneTriangle() {
+        let n = 5;
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= i; j++) {
+                    document.writeln("1");
+                }
+                document.writeln("<br/>");
+            }
+        }
+
+        function showClock() {
+            let today = new Date();
+            let hours = today.getHours();
+            let minutes = today.getMinutes();
+            let seconds = today.getSeconds();
+            minutes = zeroFront(minutes);
+            seconds = zeroFront(seconds);
+
+            document.getElementById('clock').innerHTML =  hours + ":" + minutes + ":" + seconds;
+            setTimeout(showClock, 1000);
+        }
+        function zeroFront(i) {
+            if(i<10){
+                i = "0" + i
+            };
+            return i;
+        }
+    </script>
+
+</body>
+
+</html>

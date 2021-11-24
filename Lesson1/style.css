@@ -1,0 +1,54 @@
+body{
+    background-color: lightgrey;
+}
+.content{
+    background-color: white;
+    width: 400px;
+}
+#container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.title{
+    text-align: center;
+}
+.number{
+    font-size: 60px;
+}
+.part1{
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 0.2px;
+}
+.part2{
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 0.2px;
+}
+.part3{
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 0.2px;
+    background-color: rgb(231, 231, 231);
+    height: 100px;
+    position: relative;
+}
+button{
+    background-color: orangered;
+    position: absolute;
+    top: 20px;
+    left: 125px;
+    border-radius: 20px;
+}
+.but{
+    font-size: 20px;
+}
+
+li{
+    font-size: 25px;
+}
+ul li{
+    list-style: circle;
+}
+
