@@ -96,7 +96,7 @@ changenumber = prompt('Bạn muốn thay đổi số điện thoại của ai?')
                 changePhone.innerHTML = `
                 <form id="edit-phonenumber">
                 <input type="text" placeholder="phone for">
-                <button>Cập nhật</button>
+                <button class="btn bg-green">Cập nhật</button>
                 </form>
                 `}  
             }
