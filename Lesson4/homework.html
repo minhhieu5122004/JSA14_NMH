@@ -25,14 +25,25 @@
 
     <script>
         let dayso = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-        console.log(dayso)
-        function findEven() {
+        let number;
+        number = prompt('Bạn hãy nhập 1 số trong khoảng 4 tới 20');
+        console.log(number);
+        console.log(dayso);
+        if (4 <= number && number <= 20) {
+        function findEven() {  
             for (let i = 0; i < dayso.length; i++) {
-                if (dayso[i] % 2 == 0) {
-                    console.log(dayso[i])
+                if (dayso[i] < number) {
+                    if (dayso[i] % 2 == 0) {
+                        console.log(dayso[i])
+                    }
                 }
-            }
+                }
+            } 
+            }else{
+                alert('Số bạn nhập nằm ngoài khoảng quy định')
         }
+        
+        
 
         let color = document.getElementById('colortest')
         function changeColor() {

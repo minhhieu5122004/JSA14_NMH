@@ -106,3 +106,12 @@ changenumber = prompt('Bạn muốn thay đổi số điện thoại của ai?')
 
 
 
+
+
+
+
+
+
+
+
+
