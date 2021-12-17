@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+    <Form name="bigform" autocomplete="on" onsubmit="myFunction()">
+        <h1 class="title"><span class="lefttitle">Admin</span><span class="righttitle">Dashboard</span></h1>
+        <h3>Sign in to your account.</h3>
+        <input type="text" placeholder="Email - Format: [...]@gmail.com" pattern="[a-z, 0-9]+@gmail.com" id="email" class="blankspace"
+        required>
+        <input type="password" placeholder="Password" id="pwd" class="blankspace"
+        required>
+        <img src="https://img.icons8.com/material-outlined/24/000000/visible--v1.png" alt=""  onmousedown="showPassword()">
+        <input type="checkbox" class="checkbox" id="remember">
+        <h2 class="rmb">Remember me</span>
+            <h2 class="forget">Forget Password?</h2>
+            <button type="submit" id="submit"><h2 class="signin">Sign in</h2></button>
+            <h2 class="question">Don't have an account? Sign up</h2>
+    </Form>
+    <div id="question">
+        <table id="tbQuestion">
+
+        </table>
+
+    </div>
+
+    <script>
+        var password = document.getElementById("pwd");
+        var email = document.getElementById("email");
+
+        function myFunction() {
+        var valueEmail = [email.value, password.value];
+        localStorage.setItem("Email", JSON.stringify(valueEmail));
+        var listEmail = localStorage.getItem("Email");
+
+        if (email.value == "admin@gmail.com" && password.value == "admin") {
+            alert("Đăng nhập thành công");
+            let url = "https://opentdb.com/api.php?amount=5&category=21&difficulty=easy&type=multiple";
+        window.data=[];
+
+        let data;
+        let tbQuestion = document.getElementById('tbQuestion');
+
+        let display=``;
+        display = ``;
+        
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            data = data.results;
+            render(data);
+            tbQuestion.innerHTML = display;
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+        function render(data) {
+            data.forEach(item => {
+                display += `<tr>
+                    <th>${item.category}</th>
+                    <th>${item.type}</th>
+                    <th>${item.difficulty}</th>
+                    <th>${item.question}</th>
+                    <th>${item.correct_answer +', ' + item.incorrect_answer}</th>
+                    <th>${item.correct_answer}</th>
+                    </tr>`;
+            });
+        }
+
+        }else{
+            alert("Email hoặc mật khẩu không chính xác")
+        } 
+        function showPassword() {
+            if (password.type === "password") {
+                password.type = "text";
+            } else {
+                password.type = "password";
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>
